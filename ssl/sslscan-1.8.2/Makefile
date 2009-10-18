@@ -7,7 +7,7 @@ all:
 
 install:
 	cp sslscan $(BINPATH)
-	cp sslscan.1 $(MANPATH)man1
+	cp sslscan.1 $(MANPATH)man1/
 
 uninstall:
 	rm -f $(BINPATH)sslscan

@@ -1,0 +1,244 @@
+body
+{
+	background:#a49660;
+	margin:0;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+}
+div.container2
+{
+	width:70%;
+	padding:30px 0 0 0;
+	margin:0px auto;
+}
+div.container
+{
+	
+	
+	width:70%;
+	margin:30px auto;
+	
+}
+div.content
+{
+	padding:30px;
+	background:white;
+}
+pre
+{
+	overflow: scroll;
+	padding:30px;
+	height:400px;
+	background:#eee;
+	border:1px solid #777;
+	margin-bottom: 30px;
+}
+a
+{
+	text-decoration: underline;
+	font-weight: bold;
+	color:#d0006d;
+	font-style: italic;
+}
+a:hover
+{
+	
+	color:black;
+}
+h1, h2, h3, h4, h5, h6
+{
+	margin:0;
+	padding:0;
+	font-weight: normal;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+table
+{
+	border:0px;
+	width:100%;
+	font-size:10px;
+	margin-bottom:20px;
+}
+td
+{
+	padding:6px;
+	line-height: 18px;
+	border-bottom:1px solid #eee;
+}
+th
+{
+	padding:6px;
+	text-decoration: underline;
+}
+tr
+{
+	
+}
+td.key
+{
+	width:170px;
+	font-size:12px;
+}
+th
+{
+	background:#eee;
+	text-align: left;
+}
+fieldset
+{
+	border:0;
+	padding:0;
+	border-top:2px solid #eee;
+	padding:10px 0;
+}
+label
+{
+	font-weight: bold;
+	color:#305497;
+	width:200px;
+	display:block;
+	margin-bottom:5px;
+}
+input.text
+{
+	padding:5px;
+	background:#eee;
+}
+input.url
+{
+	width:95%;
+	font-size:18px;
+}
+a.clear
+{
+	display: block;
+	margin-top:10px;
+	text-decoration: none;
+	
+	font-size:10px;
+	font-style: normal;
+	color:#86a300;
+}
+a.clear:hover
+{
+	color:black;
+}
+h2
+{
+	color:#86a300;
+	margin:15px 0;
+}
+select
+{
+	border:1px solid #ccc;
+}
+.form
+{
+	float:left;
+	width:50%;
+}
+.history
+{
+	float:right;
+	width:45%;
+	font-size: 10px;
+}
+.clear
+{
+	clear:both;
+}
+.actions a
+{
+	height:27px;
+	width:27px;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	float:left;
+	margin-right:5px;
+}
+#variables input.text
+{
+	width:25%;
+	margin:0 5px 7px 0;
+	float:left;
+}
+.actions a:hover
+{
+	opacity:.5;
+}
+.actions a:active
+{
+	opacity:1;
+}
+a.add
+{
+	background-image:url(http://www.travisweerts.com/images/icons/add_16.png);
+}
+a.delete
+{
+	background-image:url(http://www.travisweerts.com/images/icons/cancel_16.png);
+}
+.variable
+{
+	clear:both;
+}
+
+.variable .input
+{
+	
+}
+.variable .actions
+{
+	float:left;
+}
+.links
+{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.links li
+{
+	padding:8px 0;
+	border-top:1px dotted #ccc;
+}
+li span
+{
+	font-size:10px;
+	color:grey;
+	margin-left:15px;
+}
+li span.time
+{
+	color:grey;
+	
+}
+a.menu
+{
+	color:white;
+	font-style: normal;
+	font-size: 10px;
+	text-decoration: none;
+	display:block;
+	float:left;
+	margin-right:20px;
+}
+a.menu:hover
+{
+	color:black;
+	text-decoration: underline;
+}
+p.desc
+{
+	color:#ccc;
+}
+.actions a.hidden
+{
+	display:none;
+}
+.copy
+{
+	font-size:9px;
+}

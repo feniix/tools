@@ -1,0 +1,57 @@
+.TH sslcat 1 "1 April 2006" "bindshell.net"
+.SH NAME
+.B sslcat
+\- netcat like utility with SSL support.
+.SH SYNOPSYS
+.B sslcat
+.RB [ " \-Bd3T " ]
+<host>
+[port]
+.SH DESCRIPTION
+.B sslcat
+is a simple Unix utility that reads and writes data across an SSL enable
+network connection.
+.PP
+.B sslcat
+accepts a hostname and optional port number (443 is used if none is
+specified) and attempts to form a SSLv2 connection to the specified host. 
+If all goes well, data is read from stdin and sent across the encrypted
+connection, while incoming data from the encrypted connection is sent to
+stdout.
+.SH OPTIONS
+.TP
+.B \-B
+Enabled debugging output.
+.TP
+.B \-d
+Drop connection on EOF from STDIN.
+.TP
+.B \-3
+Force use of SSLv3.
+.TP
+.B \-T
+Force use of TLSv1.
+.SH EXAMPLES
+By using the
+.B echo
+command to produce a simple HTTP request and piping this through
+.B sslcat
+we can use standard Unix commands to process the result:
+.PP
+.B echo 'HEAD / HTTP/1.0\er\en\er\en' | sslcat hotmail.com | grep ^Server
+.PP
+The webserver running at www.sun.com doesn't like SSLv2 connection, so we
+need to add the \-3 option to force the use of SSLv3:
+.PP
+.B echo 'HEAD / HTTP/1.0\er\en\er\en' | sslcat -3 sun.com | grep ^Server
+.SH AUTHOR
+Dave Armstrong
+.I <dave@bindshell.net>
+.SH DISTRIBUTION
+The latest version of
+.B sslcat
+can be obtained from:
+.PP
+.RS
+http://www.bindshell.net/tools/
+.RE

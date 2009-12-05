@@ -1,0 +1,17 @@
+Source: sslcat
+Section: contrib/net
+Priority: extra
+Maintainer: Sebastian Otaegui <feniix@gmail.com>
+Build-Depends: debhelper (>= 7), autotools-dev, quilt ( >=0.46-4 ), libssl-dev
+Standards-Version: 3.8.3
+
+Package: sslcat
+Architecture: any
+Homepage: http://www.bindshell.net/tools/sslcat
+Depends: ${shlibs:Depends}
+Description: A simple Unix utility that reads/writes data across SSL
+ SSLCat accepts a hostname and optional port number (443 is used if 
+ none is specified) and attempts to form a SSLv2 connection to the 
+ specified host. If all goes well, data is read from stdin and sent 
+ across the encrypted connection, while incoming data from the encrypted 
+ connection is sent stdout.

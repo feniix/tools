@@ -1,0 +1,17 @@
+##
+## $Id: README,v 1.1.1.1 2006/03/21 23:20:38 dave Exp $
+##
+SSLCat - Version 1.0
+By dave@bindshell.net
+http://www.bindshell.net/tools
+
+REQUIREMENTS
+
+	openssl
+
+INSTALLATION
+
+	./configure
+	make
+	make install
+

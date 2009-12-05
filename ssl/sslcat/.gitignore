@@ -1,3 +1,2 @@
-sslcat*build
-sslcat*changes
-sslcat*deb
+sslcat_*
+!sslcat_*tar.gz

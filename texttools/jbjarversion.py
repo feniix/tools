@@ -1,13 +1,22 @@
+import sys
 import os
+import getopt
 import urllib2
+import re
 from BeautifulSoup import BeautifulSoup
 
 
-basedir = '/home/otaeguis/src/JBPAPP_4_3_0_GA/thirdparty'
+basedir = '/home/otaeguis/src/JBPAPP_4_3_0_GA_CP01/thirdparty'
 infofile = 'component-info.xml'
-tablesep = '|'
+ts = '|'
+header = '||Component||Library||Version||Description||Comment||'
 
-for dir in os.listdir(basedir):
+print header
+
+for dir in sorted(os.listdir(basedir)):
+    if dir == '':
+        print 'The directory structure is not adequate'
+        break
     filepath = ''.join([basedir, '/', dir, '/', infofile])
     if os.path.exists(filepath):
         filepath = ''.join(['file://',filepath])
@@ -17,17 +26,20 @@ for dir in os.listdir(basedir):
     
     xml = file.read()
     soup = BeautifulSoup(xml)
-    
-    for attr, value in soup.find('artifact').attrs:
-        if attr == 'id':
-            table = tablesep + value + tablesep
+
     for attr, value in soup.find('component').attrs:
-        if attr == 'version':
-            table += value + tablesep
-        if attr == 'description':
-            table += value + tablesep
-    print table
+        if attr == 'id':
+            c_attr = value
+        elif attr == 'description':
+            d_attr = str(value).replace('\n', '').replace('             ', '')
+        elif attr == 'version':
+            v_attr = value
+        else:
+            continue
 
-
+    artifacts = soup.findAll('artifact')
+    for line in artifacts:
+        ids = re.split('"', str(line))
+        print ts + c_attr + ts + ids[1] + ts + v_attr + ts + d_attr + ts
 
 

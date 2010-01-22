@@ -1,12 +1,10 @@
-import sys
 import os
-import getopt
 import urllib2
 import re
 from BeautifulSoup import BeautifulSoup
 
 
-basedir = '/home/otaeguis/src/JBPAPP_4_3_0_GA_CP01/thirdparty'
+basedir = '/CHANGEME/temp/thirdparty' # this is the directory that needs to be changed
 infofile = 'component-info.xml'
 ts = '|'
 header = '||Component||Library||Version||Description||Comment||'
@@ -40,6 +38,6 @@ for dir in sorted(os.listdir(basedir)):
     artifacts = soup.findAll('artifact')
     for line in artifacts:
         ids = re.split('"', str(line))
-        print ts + c_attr + ts + ids[1] + ts + v_attr + ts + d_attr + ts
+        print ts + c_attr + ts + ids[1] + ts + v_attr + ts + d_attr + ts + " " + ts
 
 

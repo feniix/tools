@@ -45,26 +45,25 @@ goto cmdEnd
 
 :cmdStart
 REM Executed on service start
-REM run_%SERVERCFG%.bat  -b %SERVERIP% -c %SERVERCFG% -u %MCASTIP% -Djboss.partition.name=%SERVERCFG% >>run_%SERVERCFG%.log
-REM goto cmdEnd
-REM
-REM :cmdStop
-REM call shutdown.bat -S -s jnp://%SERVERIP%:1099 %ADMUSER% >shutdown_%SERVERCFG%.log
-REM goto cmdEnd
-REM
-REM :cmdRestart
-REM call shutdown.bat -S -s jnp://%SERVERIP%:1099 %ADMUSER% >>shutdown_%SERVERCFG%log
-REM call run_%SERVERCFG%.bat  -b %SERVERIP% -c %SERVERCFG% -u %MCASTIP% -Djboss.partition.name=%SERVERCFG% >>run_%SERVERCFG%.log
-REM goto cmdEnd
-REM
-REM :cmdSignal
-REM @if not ""%2"" == """" goto execSignal
-REM echo Missing signal parameter.
-REM echo Usage: service signal [0...9]
-REM goto cmdEnd
-REM :execSignal
-REM jbosssvc.exe -k%2 %SVCNAME%
-REM goto cmdEnd
-REM
-REM :cmdEnd
-REM
+run_%SERVERCFG%.bat  -b %SERVERIP% -c %SERVERCFG% -u %MCASTIP% -Djboss.partition.name=%SERVERCFG% >>run_%SERVERCFG%.log
+goto cmdEnd
+
+:cmdStop
+call shutdown.bat -S -s jnp://%SERVERIP%:1099 %ADMUSER% >shutdown_%SERVERCFG%.log
+goto cmdEnd
+
+:cmdRestart
+call shutdown.bat -S -s jnp://%SERVERIP%:1099 %ADMUSER% >>shutdown_%SERVERCFG%log
+call run_%SERVERCFG%.bat  -b %SERVERIP% -c %SERVERCFG% -u %MCASTIP% -Djboss.partition.name=%SERVERCFG% >>run_%SERVERCFG%.log
+goto cmdEnd
+
+:cmdSignal
+@if not ""%2"" == """" goto execSignal
+echo Missing signal parameter.
+echo Usage: service signal [0...9]
+goto cmdEnd
+:execSignal
+jbosssvc.exe -k%2 %SVCNAME%
+goto cmdEnd
+
+:cmdEnd
